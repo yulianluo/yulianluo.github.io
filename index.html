@@ -20,7 +20,7 @@
     {
       name: "GitHub Pages",
       settings: "" ,
-      url: "https://slorber.github.io/trailing-slash-guide"
+      url: "https://yulianluo.github.io"
     },
   ];
 
@@ -74,22 +74,7 @@
     document.body.appendChild(div);
   }
 
-  function printMarkdownTable(results) {
-    const markdownTableString = markdownTable([
-      ['Url', 'Result'],
-      ...results.map(result => [result.url, formatResultMarkdown(result)])
-    ]);
-    console.log("\n\n\nmarkdownTableString for current host:\n");
-    console.log(markdownTableString);
-  }
 
-  async function run() {
-    const results = await Promise.all(Urls.map(fetchUrl))
-
-    results.forEach(addUrlResultToDOM);
-
-    printMarkdownTable(results);
-  }
 
   run().catch(e => {
     console.error(e);
@@ -104,7 +89,7 @@
     async function fetchDeploymentUrl(deployment,url) {
       const absoluteUrl = `${deployment.url}${url}`;
       const corsProxyUrl = `${CorsProxy}${absoluteUrl}`;
-      const response = await fetch(corsProxyUrl);
+      const response = await fetch(absoluteUrl);
 
       // Mostly for GH pages
       function removeDeploymentBaseUrl(str) {
