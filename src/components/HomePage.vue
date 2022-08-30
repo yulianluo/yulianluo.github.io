@@ -18,9 +18,9 @@
 
         <div class="links">
           <p>
-            If you're interested, please check my <a href="/cv">CV</a>, details
-            about things <a href="/experience">I've done</a> and things
-            <a href="/about">about me</a> as a person.
+            If you're interested, please check my <router-link to="/cv">CV</router-link>, details
+            about things <router-link to="/experience">I've done</router-link> and things
+            <router-link to="/about">about me</router-link> as a person.
           </p>
 
           <p>Please feel free to contact me: yulian@kth.se</p>

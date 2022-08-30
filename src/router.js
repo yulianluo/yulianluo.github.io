@@ -5,6 +5,7 @@ import Experience from './components/Experience.vue'
 import About from './components/About.vue'
 import CV from './components/CV.vue'
 
+
 const routes = [
     // { path: '/statistics', component: Statistics },
     // { path: '/citation-map', component: CitationMap },
@@ -14,6 +15,7 @@ const routes = [
     { path: '/cv', component: CV },
     { path: '/experience', component: Experience },
     { path: '/about', component: About },
+
  
   ]
 

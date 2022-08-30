@@ -10,9 +10,10 @@
     <div class="header-right">
       <ul>
         <li><router-link to="/cv">CV</router-link></li>
-        <a href="../assets/CV_YulianLuo_KTH.pdf" target=”_blank”>CV</a>
-        
-       
+        <li><a href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing
+"></a></li>
+  
+               
         <li><router-link to="/experience">Experience</router-link></li>
         <li><router-link to="/about">About</router-link></li>
       </ul>
