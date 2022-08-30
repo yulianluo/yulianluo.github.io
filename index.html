@@ -5,27 +5,167 @@
     <link rel="icon" href="/src/assets/cat.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Start Single Page Apps for GitHub Pages -->
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+ 
+  
+<script type="module">
+  import {markdownTable} from "https://cdn.skypack.dev/markdown-table@3.0.0";
+
+  const Urls = [
+    "/cv",
+    "/experience",
+    "/about",
+  ];
+
+  const Deployments = [
+    {
+      name: "GitHub Pages",
+      settings: "" ,
+      url: "https://slorber.github.io/trailing-slash-guide"
+    },
+  ];
+
+  Deployments.forEach(deployment => {
+    if (deployment.url.endsWith("/") ) {
+      throw new Error("Please don't include trailing slash in deployment url: " + JSON.stringify(deployment))
+    }
+  })
+
+  // GH pages urls start with /trailing-slash-guide/ => we don't want the baseurl to pollute the result
+  const baseUrlPrefix = window.location.pathname.slice(0,-1); // ignore trailing /
+  console.log({baseUrlPrefix})
+
+  function addBaseUrl(url) {
+    return `${baseUrlPrefix}${url}`;
+  }
+  function removeBaseUrl(url) {
+    return url.replace(baseUrlPrefix,"");
+  }
+
+  async function fetchUrl(url) {
+    // Using {redirect: "manual"} is not a good solution => shows status=0 + redirect url is not accessible
+    const absoluteUrl = addBaseUrl(url);
+    const response = await fetch(absoluteUrl);
+    console.log({url, absoluteUrl, response});
+    return {
+      url,
+      absoluteUrl,
+      status: response.status, // Note: fetch follows redirects and output status=200
+      redirectUrl: response.redirected ? removeBaseUrl(new URL(response.url).pathname) : undefined
+    };
+  }
+
+
+
+
+
+
+  function addUrlResultToDOM(result) {
+    const div = document.createElement("div");
+
+    const a = document.createElement('a');
+    a.appendChild(document.createTextNode(result.url));
+    a.href = result.absoluteUrl;
+    div.appendChild(a);
+
+    div.appendChild(document.createTextNode(" - "));
+
+    div.appendChild(formatResultDOM(result));
+
+    document.body.appendChild(div);
+  }
+
+  function printMarkdownTable(results) {
+    const markdownTableString = markdownTable([
+      ['Url', 'Result'],
+      ...results.map(result => [result.url, formatResultMarkdown(result)])
+    ]);
+    console.log("\n\n\nmarkdownTableString for current host:\n");
+    console.log(markdownTableString);
+  }
+
+  async function run() {
+    const results = await Promise.all(Urls.map(fetchUrl))
+
+    results.forEach(addUrlResultToDOM);
+
+    printMarkdownTable(results);
+  }
+
+  run().catch(e => {
+    console.error(e);
+    alert("Error, check the console: " + e.message);
+  });
+
+
+  async function runAllDeployments() {
+
+    const CorsProxy = "https://cors.bridged.cc/"
+
+    async function fetchDeploymentUrl(deployment,url) {
+      const absoluteUrl = `${deployment.url}${url}`;
+      const corsProxyUrl = `${CorsProxy}${absoluteUrl}`;
+      const response = await fetch(corsProxyUrl);
+
+      // Mostly for GH pages
+      function removeDeploymentBaseUrl(str) {
+        const baseUrl = new URL(deployment.url).pathname;
+        if (baseUrl === "/") {
+          return str;
         }
-      }(window.location))
+        return str.replace(baseUrl,"");
+      }
+
+      // cors proxy impl details :'(
+      const finalUrl = response.headers.get("x-final-url");
+      const redirectUrl = absoluteUrl !== finalUrl ? removeDeploymentBaseUrl(new URL(finalUrl).pathname) : undefined;
+
+      return {
+        url,
+        absoluteUrl,
+        status: response.status,
+        redirectUrl,
+      };
+    }
+
+    async function getSingleDeploymentResults(deployment) {
+      return Promise.all(Urls.map(url => fetchDeploymentUrl(deployment,url)));
+    }
+
+    async function getAllDeploymentsResults() {
+      return Promise.all(Deployments.map(async deployment => {
+        const results = await getSingleDeploymentResults(deployment);
+        return {deployment,results};
+      }));
+    }
+
+    function printMarkdownTable(allDeploymentsResults) {
+      const markdownTableString = markdownTable([
+        [
+          'Host',
+          'Settings',
+          'Url',
+          ...Urls,
+        ],
+        ...allDeploymentsResults.map(({deployment,results}) => {
+          return [
+            deployment.name,
+            deployment.settings,
+            `[link](${deployment.url})`,
+            ...results.map(formatResultMarkdown)
+          ];
+        }),
+      ]);
+      console.log("\n\n\nmarkdownTableString for all deployments:\n");
+      console.log(markdownTableString);
+    }
+
+    const allDeploymentsResults = await getAllDeploymentsResults();
+    printMarkdownTable(allDeploymentsResults);
+  }
+
+  runAllDeployments();
+
+
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
     <title>Yulian Luo</title>
