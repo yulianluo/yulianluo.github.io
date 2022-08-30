@@ -1,25 +1,101 @@
+<script setup>
+import { ref } from "vue";
+
+const large = ref(true);
+const small = ref(false);
+const small_menu = ref(false);
+function setDrawer() {
+  small_menu.value = !small_menu.value;
+  console.log(small_menu.value);
+}
+
+(function (doc, win) {
+  var docEl = doc.documentElement,
+    resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
+    recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+      if (clientWidth >= 640) {
+        large.value = true;
+        small.value = false;
+
+        console.log(">=640", clientWidth, large.value);
+      } else {
+        small.value = true;
+        large.value = false;
+
+        console.log("else", clientWidth, large.value);
+        console.log("else", clientWidth, small.value);
+      }
+    };
+
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener("DOMContentLoaded", recalc, false);
+})(document, window);
+</script>
+
 <template>
   <div class="main">
-    <div class="hearder">
-    <div class="header-left">
-      <ul>
-        <li><img src="../assets/cat.png" alt="logo" style="width: 26px; margin-top: 5px" /></li>
-        <li><router-link to="/">Yulian Luo</router-link></li>
-      </ul>
+    <div class="hearder-large" v-show="large">
+      <div class="header-left">
+        <ul>
+          <li>
+            <img
+              src="../assets/cat.png"
+              alt="logo"
+              style="width: 26px; margin-top: 5px"
+            />
+          </li>
+          <li><router-link to="/">Yulian Luo</router-link></li>
+        </ul>
+      </div>
+      <div class="header-large-right">
+        <ul>
+          <li>
+            <a
+              href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing
+"
+              >CV</a
+            >
+          </li>
+
+          <li><router-link to="/experience">Experience</router-link></li>
+          <li><router-link to="/about">About</router-link></li>
+        </ul>
+      </div>
+      <!-- <el-col :span="3"> Add BTNs later {{ isHeader }} </el-col> -->
     </div>
-    <div class="header-right">
-      <ul>
-        <li><router-link to="/cv">CV</router-link></li>
-        <li><a href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing
-"></a></li>
-  
-               
-        <li><router-link to="/experience">Experience</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-      </ul>
+    <div class="header-small" v-show="small">
+      <div class="header-small-left">
+        <ul>
+          <li>
+            <img
+              src="../assets/small-cat.png"
+              alt="logo"
+              style="width: 55px; "
+              @click="setDrawer()"
+            />
+          </li>
+          <li><router-link to="/">Yulian Luo</router-link></li>
+        </ul>
+      </div>
+
+      <div class="header-small-right" v-show="small_menu">
+        <ul>
+          <li>
+            <a
+              href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing
+"
+              >CV</a
+            >
+          </li>
+
+          <li><router-link to="/experience">Experience</router-link></li>
+          <li><router-link to="/about">About</router-link></li>
+        </ul>
+      </div>
     </div>
-    <!-- <el-col :span="3"> Add BTNs later {{ isHeader }} </el-col> -->
-  </div>
   </div>
 </template>
 
@@ -37,7 +113,7 @@ export default {
   color: #fff;
   background-color: rgb(35, 35, 35);
 
-    display: flex;
+  display: flex;
   justify-content: center;
 }
 .main img {
@@ -45,29 +121,61 @@ export default {
   padding-top: 5px;
   padding-right: 10px;
 }
-.main ul li {
+
+.main .hearder-large ul li {
   float: left;
   height: 50px;
 }
 .main ul li a {
   display: inline-block;
-  padding: 0 20px;
+  padding: 0 15px;
   height: 100%;
   color: rgb(219, 219, 219);
   /* padding-left: 30px; */
 }
 .main ul li a:hover {
-  background-color: rgb(106, 106, 106);
+  background-color: #4e4e4e
 }
 .main ul li a.link-active {
   /* background-color: rgb(168, 168, 168); */
   background-image: linear-gradient(135deg, #2f2f2f, #4e4e4e);
   color: #f7f7f7;
 }
-.hearder{
-  width: 66%
+.hearder-large {
+  width: 66%;
 }
-.header-right{
+.header-large-right {
   float: right;
 }
+.header-small {
+  width: 90%;
+}
+.header-small img:hover {
+ cursor: pointer;
+
+}
+.header-small-left img{
+ width:100px
+}
+.header-small-left ul li {
+ float: left;
+  height: 50px;
+}
+.header-small-right {
+  display: inline-block;
+  position: absolute;
+  top: 50px;
+  left:10px;
+  text-align:left;
+  background-color: rgb(33, 33, 33);
+  width: 120px;
+  overflow: hidden;
+ 
+}
+.header-small-right ul li a {
+  
+  width: 100%;
+  z-index: 100000;
+}
+
 </style>

@@ -21,7 +21,7 @@ const value2 = ref([]);
 <template>
   <div id="app">
     <!-- Header -->
-    <Header :isHeader="isHeader" />
+    <Header />
     <!-- Divide main page-->
     <div class="mainpage">
       
