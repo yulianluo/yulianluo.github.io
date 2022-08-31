@@ -11,17 +11,13 @@ const small = ref(false);
     recalc = function () {
       var clientWidth = docEl.clientWidth;
       if (!clientWidth) return;
-      if (clientWidth >= 640) {
+      if (clientWidth >= 660) {
         large.value = true;
         small.value = false;
 
-        console.log(">=640", clientWidth, large.value);
       } else {
         small.value = true;
         large.value = false;
-
-        console.log("else", clientWidth, large.value);
-        console.log("else", clientWidth, small.value);
       }
     };
 

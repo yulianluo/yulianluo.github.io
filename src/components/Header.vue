@@ -15,17 +15,14 @@ function setDrawer() {
     recalc = function () {
       var clientWidth = docEl.clientWidth;
       if (!clientWidth) return;
-      if (clientWidth >= 640) {
+      if (clientWidth >= 660) {
         large.value = true;
         small.value = false;
 
-        console.log(">=640", clientWidth, large.value);
+       
       } else {
         small.value = true;
         large.value = false;
-
-        console.log("else", clientWidth, large.value);
-        console.log("else", clientWidth, small.value);
       }
     };
 
@@ -36,6 +33,7 @@ function setDrawer() {
 </script>
 
 <template>
+<div>
   <div class="main">
     <div class="hearder-large" v-show="large">
       <div class="header-left">
@@ -96,6 +94,9 @@ function setDrawer() {
         </ul>
       </div>
     </div>
+    
+  </div>
+  <div class="contact">yulian@kth.se</div>
   </div>
 </template>
 
@@ -112,9 +113,10 @@ export default {
   line-height: 50px;
   color: #fff;
   background-color: rgb(35, 35, 35);
-
   display: flex;
   justify-content: center;
+   
+ 
 }
 .main img {
   width: 40px;
@@ -127,6 +129,7 @@ export default {
   height: 50px;
 }
 .main ul li a {
+ 
   display: inline-block;
   padding: 0 15px;
   height: 100%;
@@ -142,10 +145,12 @@ export default {
   color: #f7f7f7;
 }
 .hearder-large {
-  width: 66%;
+  width: 63%;
+ 
 }
 .header-large-right {
   float: right;
+  padding-right: 20px
 }
 .header-small {
   width: 90%;
@@ -177,5 +182,15 @@ export default {
   width: 100%;
   z-index: 100000;
 }
+.contact{
+ position: absolute;
 
+  right: 30px;
+  top: 12px;
+  font-size: 18px;
+  height: 30px;
+  font-weight: bold;
+  /* background-color: #fff; */
+  text-align: right;
+}
 </style>
