@@ -175,7 +175,7 @@ export default {
   background-color: rgb(33, 33, 33);
   width: 120px;
   overflow: hidden;
- 
+  z-index: 30
 }
 .header-small-right ul li a {
   
