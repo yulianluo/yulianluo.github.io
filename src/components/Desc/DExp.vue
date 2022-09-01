@@ -44,7 +44,7 @@ export default {
       >
         <el-carousel-item>
           <div class="caro-box">
-            <img ref="bannerHeight" src="../../assets/co3.png" alt="co1" />
+            <img ref="bannerHeight" src="@/assets/co3.png" alt="co1" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
