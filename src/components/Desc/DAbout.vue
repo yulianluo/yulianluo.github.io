@@ -75,7 +75,7 @@ onMounted(function () {
       basically forget everything.
     </p>
     <p>
-      I like travelling by my self and chat with random strangers in hostels or
+      I like travelling by my self and chatting with random strangers in hostels or
       restaurants.
     </p>
     <p>I also like baking and playing ping pong 🏓️.</p>

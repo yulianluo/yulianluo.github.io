@@ -20,7 +20,7 @@
           <p>
             Feel competent for
             <b>front/back-end</b> and
-            <b>full-stack </b>junior postions.
+            <b>full-stack </b>junior positions.
           </p>
 
           <p>
@@ -88,7 +88,7 @@ export default {};
 
 .fix-box {
   overflow: auto;
-
+ margin-top: 10px;
   height: 220px;
 }
 .skills {
