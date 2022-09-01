@@ -91,6 +91,16 @@ export default {};
  margin-top: 10px;
   height: 220px;
 }
+.fix-box::-webkit-scrollbar {
+  width: 8px;
+background-color: rgb(43, 43, 43);
+
+}
+.fix-box::-webkit-scrollbar-thumb{
+   background: rgb(111, 111, 111);
+   border-radius: 3px;
+}
+
 .skills {
   display: -webkit-flex;
   display: flex;

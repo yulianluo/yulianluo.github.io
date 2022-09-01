@@ -196,6 +196,7 @@ img.bg {
 img {
   width: 86%;
   opacity: 0.9;
+  height: 86%
 }
 
 .item {

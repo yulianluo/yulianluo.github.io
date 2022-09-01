@@ -131,11 +131,16 @@ onMounted(function () {
 
 div.slide-slow {
   width: 90%;
-  height: 265px;
+  height: 275px;
   /* overflow: hidden; */
-     overflow: auto;
+     overflow-x: auto;
   
 }
+div.slide-slow::-webkit-scrollbar {
+  display: none;
+  
+}
+
 div.slide-slow div.inner {
   animation: slide-slow 3s;
   margin-top: 0%;
