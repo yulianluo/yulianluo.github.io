@@ -44,17 +44,17 @@ export default {
       >
         <el-carousel-item>
           <div class="caro-box">
-            <img ref="bannerHeight" src="@/assets/co3.png" alt="co1" />
-          </div>
-        </el-carousel-item>
-        <el-carousel-item>
-          <div class="caro-box">
-            <img src="../../assets/co4.png" alt="co2" />
+            <img ref="bannerHeight" src="../../assets/co4.png" alt="co2" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
             <img src="../../assets/co6.png" alt="co3" />
+          </div>
+        </el-carousel-item>
+        <el-carousel-item>
+          <div class="caro-box">
+            <img src="../../assets/co3.png" alt="co1" />
           </div>
         </el-carousel-item>
         <el-carousel-item>

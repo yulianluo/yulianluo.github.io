@@ -131,7 +131,7 @@ onMounted(function () {
 
 div.slide-slow {
   width: 90%;
-  height: 260px;
+  height: 265px;
   /* overflow: hidden; */
      overflow: auto;
   
