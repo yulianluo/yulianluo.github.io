@@ -4,20 +4,13 @@ export default {
   data() {
     return {
       bannerHeight: "",
-      caro_imgUrls: [
-        { id: 0, idView: "./src/assets/co3.png" },
-        { id: 1, idView: "./src/assets/co4.png" },
-        { id: 2, idView: "./src/assets/co6.png" },
-        { id: 3, idView: "./src/assets/co1.png" },
-        { id: 4, idView: "./src/assets/co2.png" },
-      ],
     };
   },
   mounted() {
     window.addEventListener(
       "resize",
       () => {
-        this.bannerHeight = this.$refs.bannerHeight[0].height;
+        this.bannerHeight = this.$refs.bannerHeight.height;
       },
       false
     );
@@ -49,9 +42,29 @@ export default {
         class="carousel"
         indicator-position="outside"
       >
-        <el-carousel-item v-for="item in caro_imgUrls" :key="item.id">
+        <el-carousel-item>
           <div class="caro-box">
-            <img ref="bannerHeight" :src="item.idView" />
+            <img ref="bannerHeight" src="../../assets/co3.png" alt="co1" />
+          </div>
+        </el-carousel-item>
+        <el-carousel-item>
+          <div class="caro-box">
+            <img src="../../assets/co4.png" alt="co2" />
+          </div>
+        </el-carousel-item>
+        <el-carousel-item>
+          <div class="caro-box">
+            <img src="../../assets/co6.png" alt="co3" />
+          </div>
+        </el-carousel-item>
+        <el-carousel-item>
+          <div class="caro-box">
+            <img src="../../assets/co1.png" alt="co4" width="100%" />
+          </div>
+        </el-carousel-item>
+        <el-carousel-item>
+          <div class="caro-box">
+            <img src="../../assets/co2.png" alt="co5" />
           </div>
         </el-carousel-item>
       </el-carousel>
@@ -65,7 +78,9 @@ export default {
           via APIs.
         </li>
 
-        <li>Built up network topology and identified the abnormal IXP links.</li>
+        <li>
+          Built up network topology and identified the abnormal IXP links.
+        </li>
       </ul>
       <div class="image-box">
         <img src="../../assets/ixp.png" alt="ixp" class="bg" />
