@@ -9,6 +9,12 @@ function setDrawer() {
  
 }
 
+function closeSmallMenu(){
+  setTimeout(500)
+  small_menu.value = false
+}
+
+
 (function (doc, win) {
   var docEl = doc.documentElement,
     resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
@@ -64,7 +70,7 @@ function setDrawer() {
       </div>
       <!-- <el-col :span="3"> Add BTNs later {{ isHeader }} </el-col> -->
     </div>
-    <div class="header-small" v-show="small">
+    <div class="header-small" v-show="small" >
       <div class="header-small-left">
         <ul>
           <li>
@@ -89,8 +95,8 @@ function setDrawer() {
             >
           </li>
 
-          <li><router-link to="/experience">Experience</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
+          <li @click="closeSmallMenu()"><router-link to="/experience">Experience</router-link></li>
+          <li @click="closeSmallMenu()"><router-link to="/about">About</router-link></li>
         </ul>
       </div>
     </div>
