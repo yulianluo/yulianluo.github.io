@@ -3,7 +3,7 @@
     <p class="co">Hi! I'm Yulian</p>
 
     <p>
-      A master's student at KTH about to graduate and looking for a job right
+      A <b>master's student</b> at <b>KTH</b> about to graduate and looking for a job right
       now.
     </p>
     <div class="fix-box">
@@ -40,7 +40,7 @@
           </div>
           <p>
             Comfortable with writing
-           <b> Python</b>, <b>Javascript</b>, <b>HTML</b>, <b>CSS</b>.
+           <b> Python</b>, <b>HTML</b>, <b>CSS</b>, and<b> Javascript</b>,.
           </p>
 
           <p>Crouse project experience with Java and C++.</p>

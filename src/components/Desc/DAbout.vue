@@ -63,22 +63,21 @@ onMounted(function () {
       My name is Yu(雨) Lian(莲). In Chinese, 雨 means rain and 莲 means lotus.
     </p>
     <p>
-      Apart from coding, I like making interesting things. Like this not so
-      useful cartoon avatar of myself.
+      Apart from coding, I like making interesting things, like this not-so-useful cartoon avatar of myself.
     </p>
     <p>
-      I know some Korean. Self-test Topik level 2 (about A2 level). Can
+      Know some Korean. Self-test Topik level 2 (about A2 level). Can
       understand more than I can speak.
     </p>
     <p>
-      I passed the SFI D level exam. But that was before my study leave. Now I
+      Passed the SFI D level exam. But that was before my study leave. Now I
       basically forget everything.
     </p>
     <p>
-      I like travelling by my self and chatting with random strangers in hostels or
+      I like travelling by myself and chatting with random strangers in hostels or
       restaurants.
     </p>
-    <p>I also like baking and playing ping pong 🏓️.</p>
+    <p>I also like baking 🍞 and playing ping pong 🏓️.</p>
   </div>
 </template>
 

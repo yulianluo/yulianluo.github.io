@@ -1,6 +1,32 @@
+<script>
+export default {
+  name: "DExp",
+  data() {
+    return {
+      bannerHeight: "",
+      caro_imgUrls: [
+        { id: 0, idView: "./src/assets/co3.png" },
+        { id: 1, idView: "./src/assets/co4.png" },
+        { id: 2, idView: "./src/assets/co6.png" },
+        { id: 3, idView: "./src/assets/co1.png" },
+        { id: 4, idView: "./src/assets/co2.png" },
+      ],
+    };
+  },
+  mounted() {
+    window.addEventListener(
+      "resize",
+      () => {
+        this.bannerHeight = this.$refs.bannerHeight[0].height;
+      },
+      false
+    );
+  },
+};
+</script>
+
 <template>
   <div class="present">
-
     <h1>Projects</h1>
     <div class="item">
       <h3>CORACLE ( Thesis Project )</h3>
@@ -13,11 +39,22 @@
           <b>SQLite </b> and <b> Neo4j</b>.
         </li>
         <li>
-          Knowledge for deploying apps online such as <b>AWS</b> and
+          Knowledge of deploying apps online such as <b>AWS</b> and
           <b>Docker</b>.
         </li>
       </ul>
-      <img src="../../assets/ixp.png" alt="ixp" class="bg" />
+      <el-carousel
+        :interval="3000"
+        :height="bannerHeight + 'px'"
+        class="carousel"
+        indicator-position="outside"
+      >
+        <el-carousel-item v-for="item in caro_imgUrls" :key="item.id">
+          <div class="caro-box">
+            <img ref="bannerHeight" :src="item.idView" />
+          </div>
+        </el-carousel-item>
+      </el-carousel>
     </div>
     <div class="item">
       <h3>Internet Exchange Point</h3>
@@ -28,10 +65,11 @@
           via APIs.
         </li>
 
-        <li>Built up network topology, identified the abnormal IXP links.</li>
+        <li>Built up network topology and identified the abnormal IXP links.</li>
       </ul>
-     
-      <img src="../../assets/ixp.png" alt="ixp" class="bg" />
+      <div class="image-box">
+        <img src="../../assets/ixp.png" alt="ixp" class="bg" />
+      </div>
     </div>
     <div class="item">
       <h3>Web Music Player</h3>
@@ -42,7 +80,9 @@
           API.
         </li>
       </ul>
-      <img src="../../assets/WebPlayer.png" alt="web player" />
+      <div class="image-box">
+        <img src="../../assets/WebPlayer.png" alt="web player" />
+      </div>
     </div>
     <div class="item">
       <h3>Travel Aid App UX Design</h3>
@@ -52,29 +92,33 @@
           end.
         </li>
         <li>
-          I learned a lot things like creating personas, A/B testing, and
+          I learned a lot of things like creating personas, A/B testing, and
           usability testing.
         </li>
         <li>I even did street surveys with my teammate at Gamla Stan.</li>
       </ul>
-      <img src="../../assets/TravelAid.png" alt="travel aid" />
+      <div class="image-box">
+        <img src="../../assets/TravelAid.png" alt="travel aid" />
+      </div>
     </div>
     <div class="item">
       <h3>WeSplit Android App</h3>
       <ul>
-        <li>It's a Android App for splitting bills with friends.</li>
+        <li>It's an Android App for splitting bills with friends.</li>
         <li>It's built with Android Studio and <b>Mongo DB</b>.</li>
       </ul>
-      <img src="../../assets/WeSplitAndroidApp.png" alt="wesplit" />
-      <br />
+      <div class="image-box">
+        <img src="../../assets/WeSplitAndroidApp.png" alt="wesplit" />
+      </div>
     </div>
+    <br />
     <h1>Work</h1>
     <div class="item">
       <h3>Editor (MDPI)</h3>
       <ul>
         <li>
-          I Processed academic manuscripts for publication. It was interesting
-          and boring.
+          Processed academic manuscripts for publication. It was interesting and
+          boring.
         </li>
         <li>Looking for reviewers continuously could be very tedious.</li>
         <li>
@@ -86,16 +130,30 @@
     <div class="item">
       <h3>Assistant Product Manager (iHandy)</h3>
       <ul>
-        <li></li>
+        <li>
+          Did typical things including analyzing user logs, conducting
+          competitive product analysis and coordinating the work of developers
+          and designers.
+        </li>
+        <li>
+          Also trivial things like communicating with meditation script
+          writers/voice-over actors, replying to users' feedback, and updating
+          content.
+        </li>
+        <li>
+          Helped with editing videos and audios for our products, which freed
+          our team from queueing for designers.
+        </li>
       </ul>
     </div>
-    <h3></h3>
+    <br />
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+
+
+    
+
 
 <style scoped>
 .present {
@@ -132,5 +190,18 @@ img {
   padding: 30px;
   /* height: 400px; */
   border-radius: 20px;
+}
+.carousel img {
+  opacity: 1;
+}
+.caro-box {
+  height: 300x;
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+}
+.image-box {
+  display: flex;
+  justify-content: center;
 }
 </style>
