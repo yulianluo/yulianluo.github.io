@@ -1,9 +1,8 @@
 <script setup>
-import { ref } from "vue";
+import { ref, reactive, computed } from "vue";
 import DHome from "./Desc/DHome.vue";
 
 const large = ref(true);
-const small = ref(false);
 
 (function (doc, win) {
   var docEl = doc.documentElement,
@@ -13,9 +12,7 @@ const small = ref(false);
       if (!clientWidth) return;
       if (clientWidth >= 660) {
         large.value = true;
-        small.value = false;
       } else {
-        small.value = true;
         large.value = false;
       }
     };
@@ -28,63 +25,54 @@ const small = ref(false);
 
 <template>
   <div class="main">
-    <div class="bg" v-show="large">
-      <div class="hire">Hire Me</div>
-
-      <div class="large">
-        <DHome />
-      </div>
+    <div class="bg">
+      <div class="hire"><p>Hire Me</p></div>
     </div>
-
-    <div class="small" v-show="small">
+    <div class="large" v-show="large">
       <DHome />
     </div>
-    <div class="end">
-     
+    <div class="small" v-show="!large">
+      <DHome />
+    </div>
+
+  </div>
+      <div class="end">
       <p>
         Interested? Check my
         <a
-          href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing
-"
+          href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing"
           >CV</a
-        >, details about things 
-        <router-link to="/experience">I've done</router-link></p><p>
-  
+        >, details about  <router-link to="/experience">things
+       I've done</router-link>
+      </p>
+      <p>
         and things <router-link to="/about">about me</router-link> as a person.
       </p>
-     <div>
+      
     </div>
-  </div>
-  </div>
 </template>
 
 
 
 <style scoped>
-.main{
-  min-height:530px;
+.main {
+  min-height: 530px;
   display: flex;
   justify-content: center;
-  align-items: center; 
-  margin-top: 20px
- 
+  align-items: center;
+  margin-top: 20px;
 }
 
-.small {
-  width: 90%;
-  position: absolute;
-  /* color: white; */
-  top: 60px;
-  right: 0;
-  left: 0;
-  margin: auto;
-}
 
 
 .hire {
-   /* background-image: linear-gradient(45deg, #555555 ,#2f2f2f, #555555); */
-  background-image: repeating-linear-gradient(45deg, #3f3f3f 40px,#2f2f2f 80px);
-   min-height:530px;
+  /* background-image: linear-gradient(45deg, #555555 ,#2f2f2f, #555555); */
+  background-image: repeating-linear-gradient(
+    45deg,
+    #3f3f3f 40px,
+    #2f2f2f 80px
+  );
+  min-height: 530px;
   /* background-color: rgb(107, 107, 107); */
   position: absolute;
   color: white;
@@ -95,16 +83,23 @@ const small = ref(false);
   margin: auto;
   font-size: 180px;
   width: 100%;
- 
   z-index: -1;
 }
-.large {
-  background-image: linear-gradient(180deg, rgba(63, 63, 63,0.9) 8px,rgba(43,43,43,1) 28px);
+.hire p{
+  padding: 0 10px
+}
+.large,
+.small {
+  background-image: linear-gradient(
+    180deg,
+    rgba(63, 63, 63, 0.9) 8px,
+    rgba(43, 43, 43, 1) 28px
+  );
   width: 80%;
   height: 360px;
   /* background-color: rgb(43, 43, 43); */
   position: absolute;
-  color: white;
+  color: rgb(245, 245, 245);
   top: 170px;
   right: 0;
   left: 0;
@@ -120,6 +115,8 @@ const small = ref(false);
   margin: auto;
   width: 90%;
   font-size: 18px;
+ 
+  margin-top: 30px;
 }
 
 .end a {

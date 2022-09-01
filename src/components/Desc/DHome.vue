@@ -124,7 +124,10 @@ export default {};
   margin-top: 4px;
   margin-left: 14px;
   display: list-item;
-   list-style-type: circle;
+  list-style-type: circle;
  
+}
+.skill-item b{
+  color: #ffffff;
 }
 </style>

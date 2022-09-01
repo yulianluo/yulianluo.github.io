@@ -6,7 +6,7 @@ const small = ref(false);
 const small_menu = ref(false);
 function setDrawer() {
   small_menu.value = !small_menu.value;
-  console.log(small_menu.value);
+ 
 }
 
 (function (doc, win) {

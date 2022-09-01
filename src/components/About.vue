@@ -3,7 +3,6 @@ import { ref } from "vue";
 import DAbout from "./Desc/DAbout.vue";
 
 const large = ref(true);
-const small = ref(false);
 
 (function (doc, win) {
   var docEl = doc.documentElement,
@@ -11,20 +10,13 @@ const small = ref(false);
     recalc = function () {
       var clientWidth = docEl.clientWidth;
       if (!clientWidth) return;
-      if (clientWidth >= 640) {
+      if (clientWidth >= 660) {
         large.value = true;
-        small.value = false;
-
-        console.log(">=640", clientWidth, large.value);
       } else {
-        small.value = true;
         large.value = false;
 
-        console.log("else", clientWidth, large.value);
-        console.log("else", clientWidth, small.value);
       }
     };
-
   if (!doc.addEventListener) return;
   win.addEventListener(resizeEvt, recalc, false);
   doc.addEventListener("DOMContentLoaded", recalc, false);
@@ -37,7 +29,7 @@ const small = ref(false);
     <div class="large" v-show="large">
       <DAbout />
     </div>
-        <div class="small" v-show="small">
+        <div class="small" v-show="!large">
       <DAbout />
     </div>
   </div>

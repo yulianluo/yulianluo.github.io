@@ -1,9 +1,8 @@
 <script setup>
-import { ref } from "vue";
+import { ref,computed, } from "vue";
 import DExp from "./Desc/DExp.vue";
 
 const large = ref(true);
-const small = ref(false);
 
 (function (doc, win) {
   var docEl = doc.documentElement,
@@ -13,27 +12,27 @@ const small = ref(false);
       if (!clientWidth) return;
       if (clientWidth >= 660) {
         large.value = true;
-        small.value = false;
-
       } else {
-        small.value = true;
         large.value = false;
       }
     };
-
   if (!doc.addEventListener) return;
   win.addEventListener(resizeEvt, recalc, false);
   doc.addEventListener("DOMContentLoaded", recalc, false);
 })(document, window);
 
+
+
 </script>
+
+
 
 <template>
   <div class="main">
     <div class="large" v-show="large">
       <DExp />
     </div>
-        <div class="small" v-show="small">
+        <div class="small" v-show="!large">
       <DExp />
     </div>
   </div>
