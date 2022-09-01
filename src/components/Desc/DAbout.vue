@@ -46,9 +46,9 @@ onMounted(function () {
     <div class="slide-slow">
       <div class="inner">
         <img
-          src="../../assets/1.gif"
+          src="../../assets/bg.gif"
           alt="Swimming fish"
-          width="380" height="261"
+          width="277" height="260"
           style="trans"
         />
         <div class="hi">
@@ -107,23 +107,32 @@ onMounted(function () {
   display: flex;
    justify-content: justify
 }
+.inner img{
+ 
+   opacity: 0.8;
+}
 .hi{
-  /* background-color: white; */
-  width: 100px;
+  /* background-color: rgba(255, 255, 255, 0.573); */
+    background-image: repeating-linear-gradient(
+    45deg,
+    #3f3f3f 40px,
+    #2f2f2f 80px
+  );
+  width: 166px;
   text-align: center;
  
 }
 .hi p{
   font-size: 50px;
   margin-top: 100px;
-  width:150px
+  width:166px
 
 }
 
 
 div.slide-slow {
   width: 90%;
-  height: 261px;
+  height: 260px;
   /* overflow: hidden; */
      overflow: auto;
   
@@ -131,6 +140,7 @@ div.slide-slow {
 div.slide-slow div.inner {
   animation: slide-slow 3s;
   margin-top: 0%;
+  margin-left: 10%;
   animation-iteration-count: 1;
 
   flex-direction: row;
@@ -141,10 +151,8 @@ div.slide-slow div.inner {
     margin-left: 100%;
   }
   to {
-    margin-left: 0%;
+    margin-left: 10%;
   }
 }
-img {
-  opacity: 0.88;
-}
+
 </style>

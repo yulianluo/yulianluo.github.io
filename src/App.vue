@@ -41,7 +41,7 @@ function closeSmallMenu(){
 <template>
 <div id="app">
 <div>
-  <div class="main">
+  <div class="main-header">
     <div class="hearder-large" v-show="large">
       <div class="header-left">
         <ul>
@@ -126,7 +126,7 @@ export default {
   color: #cdcdcd;
 }
 
-.main {
+.main-header {
   /* background-color: #c5c5c5; */
   height: 50px;
   line-height: 50px;
@@ -137,17 +137,17 @@ export default {
    
  
 }
-.main img {
+.main-header img {
   width: 40px;
   padding-top: 5px;
   padding-right: 10px;
 }
 
-.main .hearder-large ul li {
+.main-header .hearder-large ul li {
   float: left;
   height: 50px;
 }
-.main ul li a {
+.main-header ul li a {
  
   display: inline-block;
   padding: 0 15px;
@@ -155,10 +155,10 @@ export default {
   color: rgb(219, 219, 219);
   /* padding-left: 30px; */
 }
-.main ul li a:hover {
+.main-header ul li a:hover {
   background-color: #4e4e4e
 }
-.main ul li a.link-active {
+.main-header ul li a.link-active {
   /* background-color: rgb(168, 168, 168); */
   background-image: linear-gradient(135deg, #2f2f2f, #4e4e4e);
   color: #f7f7f7;

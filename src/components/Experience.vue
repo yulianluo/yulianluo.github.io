@@ -45,7 +45,7 @@ const large = ref(true);
   height: 100%;
   display: flex;
   justify-content: center;
- 
+  background-color: rgb(43, 43, 43);
 }
 .large {
   width: 60%;
