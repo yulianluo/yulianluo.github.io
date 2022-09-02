@@ -56,11 +56,11 @@ const large = ref(true);
 
 <style scoped>
 .main {
-  min-height: 530px;
+  /* min-height: 530px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 
@@ -72,9 +72,9 @@ const large = ref(true);
     #3f3f3f 40px,
     #2f2f2f 80px
   );
-  min-height: 530px;
+  /* min-height: 530px; */
   /* background-color: rgb(107, 107, 107); */
-  position: absolute;
+  position: fixed;
   color: white;
   top: 30px;
   right: 0;
@@ -108,10 +108,10 @@ const large = ref(true);
   z-index: 5;
 }
 .end {
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
-  bottom: 10px;
+  top: 510px;
   margin: auto;
   width: 90%;
   font-size: 18px;

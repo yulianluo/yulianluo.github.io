@@ -105,7 +105,7 @@ function closeSmallMenu(){
   </div>
   <div class="contact">yulian@kth.se</div>
   </div>
-  <div @click="closeSmallMenu()">
+  <div @click="closeSmallMenu()" class="router-view">
    <router-view />
   </div>
 </div>
@@ -126,6 +126,17 @@ export default {
   color: #cdcdcd;
 }
 
+.contact{
+ position: fixed;
+ right: 30px;
+ top:12px;
+  font-size: 18px;
+  height: 30px;
+  font-weight: bold;
+  /* background-color: #fff; */
+  text-align: right;
+  z-index: 10;
+}
 .main-header {
   /* background-color: #c5c5c5; */
   height: 50px;
@@ -134,7 +145,9 @@ export default {
   background-color: rgb(35, 35, 35);
   display: flex;
   justify-content: center;
-   
+  position: fixed;
+  width: 100%;
+  z-index:10;   
  
 }
 .main-header img {
@@ -201,15 +214,5 @@ export default {
   width: 100%;
   z-index: 100000;
 }
-.contact{
- position: absolute;
 
-  right: 30px;
-  top: 12px;
-  font-size: 18px;
-  height: 30px;
-  font-weight: bold;
-  /* background-color: #fff; */
-  text-align: right;
-}
 </style>

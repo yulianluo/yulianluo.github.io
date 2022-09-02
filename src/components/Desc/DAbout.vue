@@ -60,19 +60,20 @@ onMounted(function () {
       </div>
     </div>
     <p>
-      My name is Yu(雨) Lian(莲). In Chinese, 雨 means rain and 莲 means lotus.
+      My name is Yǔ(雨) Lián(莲). In Chinese, 雨 means rain and 莲 means lotus.
     </p>
     <p>
       Apart from coding, I like making interesting things, like this not-so-useful cartoon avatar of myself.
+    </p>
+        <p>
+      Passed the SFI D level exam. But that was before my study leave. Now I
+      basically forget everything.
     </p>
     <p>
       Know some Korean. Self-test Topik level 2 (about A2 level). Can
       understand more than I can speak.
     </p>
-    <p>
-      Passed the SFI D level exam. But that was before my study leave. Now I
-      basically forget everything.
-    </p>
+
     <p>
       I like travelling by myself and chatting with random strangers in hostels or
       restaurants.
@@ -95,7 +96,7 @@ onMounted(function () {
 
 .desc {
   text-align: left;
-  margin-top: 30px;
+  margin: 80px 0 20px 0;
 }
 .links a {
   text-decoration: underline;
@@ -107,8 +108,7 @@ onMounted(function () {
    justify-content: justify
 }
 .inner img{
- 
-   opacity: 0.8;
+   opacity: 0.9;
 }
 .hi{
   /* background-color: rgba(255, 255, 255, 0.573); */
@@ -130,9 +130,9 @@ onMounted(function () {
 
 
 div.slide-slow {
-  width: 90%;
-  height: 275px;
-  /* overflow: hidden; */
+  /* width: 90%; */
+  margin-top: 5px;
+  height: 265px;
      overflow-x: auto;
   
 }
@@ -144,18 +144,18 @@ div.slide-slow::-webkit-scrollbar {
 div.slide-slow div.inner {
   animation: slide-slow 3s;
   margin-top: 0%;
-  margin-left: 10%;
+  /* margin-left: 18%; */
   animation-iteration-count: 1;
-
   flex-direction: row;
   flex-wrap: nowrap;
 }
+
 @keyframes slide-slow {
   from {
     margin-left: 100%;
   }
   to {
-    margin-left: 10%;
+    margin-left: 0%;
   }
 }
 

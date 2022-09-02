@@ -156,7 +156,7 @@ export default {
           content.
         </li>
         <li>
-          Helped with editing videos and audios for our products, which freed
+          Helped with editing videos and audios for our sleep/meditation app, which freed
           our team from queueing for designers.
         </li>
       </ul>
@@ -172,7 +172,7 @@ export default {
 
 <style scoped>
 .present {
-  margin-top: 30px;
+  margin-top: 80px;
   text-align: left;
 }
 h1 {
@@ -181,7 +181,6 @@ h1 {
 
 ul {
   margin-top: 8px;
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
@@ -194,6 +193,7 @@ img.bg {
   background-color: white;
 }
 img {
+  margin-top: 15px;
   width: 86%;
   opacity: 0.9;
   height: 86%
@@ -202,10 +202,11 @@ img {
 .item {
   background-color: rgb(59, 59, 59);
   /* background-color: #fff; */
-  margin-top: 30px;
+  margin-top: 25px;
   padding: 30px;
   /* height: 400px; */
   border-radius: 20px;
+
 }
 .carousel img {
   opacity: 1;
