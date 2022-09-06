@@ -58,7 +58,7 @@ function closeSmallMenu(){
         <ul>
           <li>
             <a
-              href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing
+              href="https://drive.google.com/file/d/1jQ5kfLcKAq-yoyRuSc5PY5vlN1hF9MXD/view?usp=sharing
 "
               >CV</a
             >
@@ -89,7 +89,7 @@ function closeSmallMenu(){
         <ul>
           <li>
             <a
-              href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing
+              href="https://drive.google.com/file/d/1jQ5kfLcKAq-yoyRuSc5PY5vlN1hF9MXD/view?usp=sharing
 "
               >CV</a
             >

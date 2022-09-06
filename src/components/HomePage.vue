@@ -40,7 +40,7 @@ const large = ref(true);
       <p>
         Interested? Check my
         <a
-          href="https://drive.google.com/file/d/1tV0MXDJW7DjtkiS9elJsS_CGFUXZkhrc/view?usp=sharing"
+          href="https://drive.google.com/file/d/1jQ5kfLcKAq-yoyRuSc5PY5vlN1hF9MXD/view?usp=sharing"
           >CV</a
         >, details about  <router-link to="/experience">things
        I've done</router-link>
