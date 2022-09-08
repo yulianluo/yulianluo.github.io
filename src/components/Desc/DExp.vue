@@ -6,6 +6,7 @@ export default {
       bannerHeight: "",
     };
   },
+
   mounted() {
     window.addEventListener(
       "resize",
@@ -14,6 +15,15 @@ export default {
       },
       false
     );
+    setTimeout(function () {
+      // console.log("hash out", window.location.hash);
+      const id_hash = window.location.hash.split("#/experience#")[1];
+      if (id_hash) {
+        document.getElementById(id_hash).scrollIntoView({  behavior: "smooth",
+          block: "start", inline: "nearest"});
+      }
+    }, 100);
+
   },
 };
 </script>
@@ -21,7 +31,7 @@ export default {
 <template>
   <div class="present">
     <h1>Projects</h1>
-    <div class="item">
+    <div class="item" id="coracle">
       <h3>CORACLE ( Thesis Project )</h3>
       <ul>
         <li>
@@ -69,7 +79,7 @@ export default {
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="item">
+    <div class="item" id="ixp" >
       <h3>Internet Exchange Point</h3>
       <ul>
         <li>It's an IXP network monitoring tool built with <b>Python</b>.</li>
@@ -86,7 +96,7 @@ export default {
         <img src="../../assets/ixp.png" alt="ixp" class="bg" />
       </div>
     </div>
-    <div class="item">
+    <div class="item" id="musicplayer">
       <h3>Web Music Player</h3>
       <ul>
         <li>It's a Web music player I built with <b>Vue</b>.</li>
@@ -99,7 +109,7 @@ export default {
         <img src="../../assets/WebPlayer.png" alt="web player" />
       </div>
     </div>
-    <div class="item">
+    <div class="item" id="travelaid">
       <h3>Travel Aid App UX Design</h3>
       <ul>
         <li>
@@ -116,7 +126,7 @@ export default {
         <img src="../../assets/TravelAid.png" alt="travel aid" />
       </div>
     </div>
-    <div class="item">
+    <div class="item" id="wesplit">
       <h3>WeSplit Android App</h3>
       <ul>
         <li>It's an Android App for splitting bills with friends.</li>
@@ -127,7 +137,7 @@ export default {
       </div>
     </div>
     <br />
-    <h1>Work</h1>
+    <h1 id="work">Work</h1>
     <div class="item">
       <h3>Editor (MDPI)</h3>
       <ul>
@@ -156,8 +166,8 @@ export default {
           content.
         </li>
         <li>
-          Helped with editing videos and audios for our sleep/meditation app, which freed
-          our team from queueing for designers.
+          Helped with editing videos and audios for our sleep/meditation app,
+          which freed our team from queueing for designers.
         </li>
       </ul>
     </div>
@@ -196,7 +206,7 @@ img {
   margin-top: 15px;
   width: 86%;
   opacity: 0.9;
-  height: 86%
+  height: 86%;
 }
 
 .item {
@@ -206,7 +216,7 @@ img {
   padding: 30px;
   /* height: 400px; */
   border-radius: 20px;
-
+  scroll-margin-top: 70px;
 }
 .carousel img {
   opacity: 1;

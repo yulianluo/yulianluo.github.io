@@ -106,11 +106,6 @@ function closeSmallMenu(){
   </div>
 </template>
 
-<script>
-export default {
-  props: { isHeader: String },
-};
-</script>
 
 <style scoped>
 .main {
