@@ -42,7 +42,7 @@ export default {
           <b>SQLite </b> and <b> Neo4j</b>.
         </li>
         <li>
-          Knowledge of deploying apps online such as <b>AWS</b> and
+          Gain knowledge of deploying apps online such as <b>AWS</b> and
           <b>Docker</b>.
         </li>
       </ul>
