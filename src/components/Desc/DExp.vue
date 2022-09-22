@@ -32,7 +32,7 @@ export default {
   <div class="present">
     <h1>Projects</h1>
     <div class="item" id="coracle">
-      <h3>CORACLE ( Thesis Project )</h3>
+      <h3>COVID-19 Literature Compiler ( Thesis Project )</h3>
       <ul>
         <li>
           It's an <b>SPA</b> for literature mining and data visualization.
@@ -54,27 +54,27 @@ export default {
       >
         <el-carousel-item>
           <div class="caro-box">
-            <img ref="bannerHeight" src="../../assets/co4.png" alt="co2" />
+            <img ref="bannerHeight" src="../../assets/co4.png" alt="co2" loading="lazy" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co6.png" alt="co3" />
+            <img src="../../assets/co6.png" alt="co3" loading="lazy" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co3.png" alt="co1" />
+            <img src="../../assets/co3.png" alt="co1"  loading="lazy"/>
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co1.png" alt="co4" width="100%" />
+            <img src="../../assets/co1.png" alt="co4" width="100%" loading="lazy" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co2.png" alt="co5" />
+            <img src="../../assets/co2.png" alt="co5"  loading="lazy"/>
           </div>
         </el-carousel-item>
       </el-carousel>
@@ -139,7 +139,7 @@ export default {
     <br />
     <h1 id="work">Work</h1>
     <div class="item">
-      <h3>Editor (MDPI)</h3>
+      <h3>Editor (MDPI Sensors Journal)</h3>
       <ul>
         <li>
           Processed academic manuscripts for publication. It was interesting and

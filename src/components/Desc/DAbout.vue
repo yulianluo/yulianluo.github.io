@@ -50,6 +50,7 @@ onMounted(function () {
           alt="Swimming fish"
           width="277" height="260"
           style="trans"
+          loading="lazy"
         />
         <div class="hi">
           <p v-show="hi_e">Hi</p>

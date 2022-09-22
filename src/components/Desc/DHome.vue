@@ -24,8 +24,7 @@
           </p>
 
           <p>
-            Open to <b>any developer job</b> if
-            you found me suitable.
+            Open to <b>any developer job</b>.
           </p>
         </div>
 
