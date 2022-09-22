@@ -47,7 +47,7 @@ onMounted(function () {
       <div class="inner">
         <img
           src="../../assets/bg.gif"
-          alt="Swimming fish"
+          alt="cartoon avatar"
           width="277" height="260"
           style="trans"
           loading="lazy"
