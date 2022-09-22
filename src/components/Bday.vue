@@ -91,7 +91,7 @@ function pauseMusic() {
 div.slide-slow {
   width: 100%;
   position: absolute;
-  margin-top: 200px;
+  margin-top: 190px;
   height: 100%;
   overflow-x: auto;
   z-index: 10000;
