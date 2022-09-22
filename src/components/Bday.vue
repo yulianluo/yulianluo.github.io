@@ -122,7 +122,7 @@ div.slide-slow div.inner {
   font-family: "Great Vibes";
   font-size: 44pt;
 
-  background: linear-gradient(125deg, #ff6565,#ff6565,#ff6565, #e29d35, #56afbe,#56afbe);
+  background: linear-gradient(145deg,#ff5a5a,#ff5a5a,#ff6565, #e9c74e,#2faada,#9f9ff9);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -132,7 +132,7 @@ div.slide-slow div.inner {
 div.slide-hori {
   width: 100%;
   position: absolute;
-  margin-top: 80px;
+  margin-top: 60px;
   height: 100%;
   overflow-x: auto;
   z-index: 10000;
@@ -142,13 +142,13 @@ div.slide-hori::-webkit-scrollbar {
 }
 
 div.slide-hori div.inner {
-  animation: slide-hori 26s linear;
+  animation: slide-hori 36s linear;
   margin-top: 0%;
   animation-iteration-count: infinite;
   /* flex-direction: column;
   flex-wrap: nowrap; */
-  width: 3100px;
-  background-image: linear-gradient(135deg, #ff6565, #e1982b, #ecd125, #56afbe);
+  width: 3000px;
+  background-image: linear-gradient(135deg, #ff5a5a, #fcc454,#ff65b2, #9f9ff9,#5ec8f1);
   overflow-x: hidden;
   border-radius: 6px;
   padding: 3px 0;
@@ -159,7 +159,7 @@ div.slide-hori div.inner {
     margin-left: 130%;
   }
   to {
-    margin-left: -3100px;
+    margin-left: -3000px;
   }
 }
 
