@@ -48,7 +48,8 @@ onMounted(function () {
         <img
           src="../../assets/bg.gif"
           alt="cartoon avatar"
-          width="277" height="260"
+          width="277"
+          height="260"
           style="trans"
           loading="lazy"
         />
@@ -62,22 +63,25 @@ onMounted(function () {
     </div>
     <p>
       My name is Yǔ(雨) Lián(莲). In Chinese, 雨 means rain and 莲 means lotus.
+      Isn't it a super easy Chinese name for English speakers to pronounce.
+    </p>
+    <!-- <p>
+      Apart from coding, I like making interesting things, like this
+      not-so-useful cartoon avatar of myself.
+    </p> -->
+    <p>
+      I'm learning Swedish but now I'm at the stage that knowing more words is
+      necessary. As I can't find any helpful app, I'm writing one by myself.
+      Hoppas att appen jag vill ha verkligen kan hjälpa mig och att mitt minne
+      inte är problemet.
     </p>
     <p>
-      Apart from coding, I like making interesting things, like this not-so-useful cartoon avatar of myself.
-    </p>
-        <p>
-      Passed the SFI D level exam. But that was before my study leave. Now I
-      basically forget everything.
-    </p>
-    <p>
-      Know some Korean. Self-test Topik level 2 (about A2 level). Can
-      understand more than I can speak.
+      Know some Korean. Self-test Topik level 2 (about A2 level). Can understand more than I can speak.
     </p>
 
     <p>
-      I like travelling by myself and chatting with random strangers in hostels or
-      restaurants.
+      I like travelling by myself and chatting with random strangers in hostels
+      or restaurants.
     </p>
     <p>I also like baking 🍞 and playing ping pong 🏓️.</p>
   </div>
@@ -104,42 +108,37 @@ onMounted(function () {
   color: rgb(211, 211, 211);
   font-weight: bold;
 }
-.inner{
+.inner {
   display: flex;
-   justify-content: justify
+  justify-content: justify;
 }
-.inner img{
-   opacity: 0.9;
+.inner img {
+  opacity: 0.9;
 }
-.hi{
+.hi {
   /* background-color: rgba(255, 255, 255, 0.573); */
-    background-image: repeating-linear-gradient(
+  background-image: repeating-linear-gradient(
     45deg,
     #3f3f3f 40px,
     #2f2f2f 80px
   );
   width: 166px;
   text-align: center;
- 
 }
-.hi p{
+.hi p {
   font-size: 50px;
   margin-top: 100px;
-  width:166px
-
+  width: 166px;
 }
-
 
 div.slide-slow {
   /* width: 90%; */
   margin-top: 5px;
   height: 265px;
-     overflow-x: auto;
-  
+  overflow-x: auto;
 }
 div.slide-slow::-webkit-scrollbar {
   display: none;
-  
 }
 
 div.slide-slow div.inner {
@@ -159,5 +158,4 @@ div.slide-slow div.inner {
     margin-left: 0%;
   }
 }
-
 </style>

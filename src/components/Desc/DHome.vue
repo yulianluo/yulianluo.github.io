@@ -39,7 +39,7 @@
           </div>
           <p>
             Comfortable with writing
-           <b> Python</b>, <b>HTML</b>, <b>CSS</b>, and<b> Javascript</b>,.
+           <b> Python</b>, <b>HTML</b>, <b>CSS</b>, and<b> Javascript</b>.
           </p>
 
           <p>Crouse project experience with Java and C++.</p>

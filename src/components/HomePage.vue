@@ -42,11 +42,11 @@ const large = ref(true);
         <a
           href="https://drive.google.com/file/d/1jQ5kfLcKAq-yoyRuSc5PY5vlN1hF9MXD/view?usp=sharing"
           >CV</a
-        >, details about  <router-link to="/experience">things
+        >, details about  <router-link to="/experience">projects
        I've done</router-link>
       </p>
       <p>
-        and things <router-link to="/about">about me</router-link> as a person.
+        and <router-link to="/about">things about me</router-link> as a person.
       </p>
       
     </div>

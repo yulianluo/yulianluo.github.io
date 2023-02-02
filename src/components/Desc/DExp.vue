@@ -45,6 +45,8 @@ export default {
           Gain knowledge of deploying apps online such as <b>AWS</b> and
           <b>Docker</b>.
         </li>
+        <li>Check <a href="https://youtu.be/lVo1loxRlUI" target="_blank">the demo</a> on YouTube.</li>
+        
       </ul>
       <el-carousel
         :interval="3000"
@@ -54,27 +56,27 @@ export default {
       >
         <el-carousel-item>
           <div class="caro-box">
-            <img ref="bannerHeight" src="../../assets/co4.png" alt="co2" loading="lazy" />
+            <img ref="bannerHeight" src="../../assets/c1.png" alt="c1" loading="lazy" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co6.png" alt="co3" loading="lazy" />
+            <img src="../../assets/c2.png" alt="c2" loading="lazy" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co3.png" alt="co1"  loading="lazy"/>
+            <img src="../../assets/c3.png" alt="c3"  loading="lazy"/>
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co1.png" alt="co4" width="100%" loading="lazy" />
+            <img src="../../assets/c4.png" alt="c4" width="100%" loading="lazy" />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="caro-box">
-            <img src="../../assets/co2.png" alt="co5"  loading="lazy"/>
+            <img src="../../assets/c5.png" alt="c5"  loading="lazy"/>
           </div>
         </el-carousel-item>
       </el-carousel>
@@ -145,11 +147,9 @@ export default {
           Processed academic manuscripts for publication. It was interesting and
           boring.
         </li>
-        <li>Looking for reviewers continuously could be very tedious.</li>
-        <li>
-          So I wrote a script to scrape the internal system and find reviewers
-          automatically.
-        </li>
+        <li>Looking for reviewers continuously could be very tedious. So I wrote a Python script to scrape the internal system and find reviewers
+          automatically.</li>
+
       </ul>
     </div>
     <div class="item">
@@ -230,5 +230,9 @@ img {
 .image-box {
   display: flex;
   justify-content: center;
+}
+.present  li a {
+  color:rgb(233, 233, 233);
+  font-weight: bold;
 }
 </style>
