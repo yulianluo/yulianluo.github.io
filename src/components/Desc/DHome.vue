@@ -2,10 +2,10 @@
   <div class="desc">
     <p class="co">Hi! I'm Yulian</p>
 
-    <p>
+    <!-- <p>
       A <b>master's student</b> at <b>KTH</b> about to graduate and looking for a job right
       now.
-    </p>
+    </p> -->
     <div class="fix-box">
       <div class="skills">
         <div class="skill-item">

@@ -48,10 +48,10 @@ const large = ref(true);
   background-color: rgb(43, 43, 43);
 }
 .large {
-  width: 60%;
+  width: 100%;
 }
 .small{
-  width: 90%;
+  width: 100%;
 }
 
 
