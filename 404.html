@@ -26,7 +26,7 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      background-color: rgb(43, 43, 43);
+      background-color: rgb(16, 16, 16);
       /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
       /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%); */
     }
@@ -36,69 +36,227 @@
     }
 
     .main_404 {
-     
       width: 66%;
-      border-radius: 5px;
+      border-radius: 25px;
       box-shadow: 0 5px 25px 5px rgba(255, 255, 255, 0.3);
     }
 
     .card {
+      --neon-border-color: #08f;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100%;
       flex-direction: column;
-      /* background-image: linear-gradient(135deg, #2f2f2f, #4e4e4e); */
-    
-      background-image: linear-gradient(135deg, rgb(33,33,33), rgb(46, 46, 46));
-      border-radius: 5px;
-      /* background-color: rgb(33,33,33); */
-      border: 2px solid rgb(33,33,33);
+      border-radius: 25px;
+
+      border: 0.4rem solid #fff;
+
       height: 300px;
       text-align: center;
+      box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem var(--neon-border-color),
+        inset 0 0 2rem var(--neon-border-color),
+        0 0 4rem var(--neon-border-color),
+        inset 0 0 4rem var(--neon-border-color);
     }
 
-    p.head {
-      font-size: 100px;
-      margin: 0px;
-    }
+
 
     p.oops {
-      font-size: 20px;
+      cursor: default;
+      --neon-text-color: #FF0000;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 200;
+      color: #fff;
+      /* animation: flicker 3s infinite alternate; */
+        text-shadow:
+          -0.2rem -0.2rem 1rem #fff,
+          0.2rem 0.2rem 1rem #fff,
+          0 0 2rem var(--neon-text-color),
+          0 0 4rem var(--neon-text-color),
+          0 0 6rem var(--neon-text-color),
+          0 0 8rem var(--neon-text-color),
+          0 0 10rem var(--neon-text-color);
+
+      
+    }
+
+    @keyframes flicker {
+      0%,
+      19%,
+      21%,
+      23%,
+      25%,
+      54%,
+      56%,
+      100% {
+
+        text-shadow:
+          -0.2rem -0.2rem 1rem #fff,
+          0.2rem 0.2rem 1rem #fff,
+          0 0 2rem var(--neon-text-color),
+          0 0 4rem var(--neon-text-color),
+          0 0 6rem var(--neon-text-color),
+          0 0 8rem var(--neon-text-color),
+          0 0 10rem var(--neon-text-color);
+
+      }
+
+      20%,
+      24%,
+      55% {
+        text-shadow: none;
+        box-shadow: none;
+      }
     }
 
     a {
       width: 100px;
-      margin-top:  10px;
-      background-color: rgb(33, 33, 33);
-     /* color: white;*/
+      margin-top: 10px;
+      /* background-color: rgb(33, 33, 33); */
+      /* color: white;*/
       padding: 10px 20px;
-      border-radius: 5px;
+      /* border-radius: 5px; */
       text-decoration: none;
     }
+
     a p {
-color: #cdcdcd;
-margin: 0;
+      color: #cdcdcd;
+      margin: 0;
     }
-    a:link p {
+
+
+
+    a:visited p {
+      color: #cdcdcd;
+    }
+
+    a:hover p {
+     text-decoration: underline;
+      color:  rgb(255, 194, 194);
+    }
+
+
+    a:active p {
       color: #cdcdcd;
     }
 
 
-    a:visited p{
-      color: #cdcdcd;
+
+    h1 {
+      position: relative;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: calc(20px + 5vw);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-shadow: 0 0 0.15em  #FF0000;
+      user-select: none;
+      white-space: nowrap;
+      filter: blur(0.01em);
+      animation: shake 1s linear forwards;
     }
 
-    a:hover {
-      background-color: rgb(60, 60, 60);
-    }
-    a:hover p{
-      color: white
+
+    h1 span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+      clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
     }
 
+    h1::before,
+    h1::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-    a:active p{
-      color: #cdcdcd;
+    h1::before {
+      animation: crack1 1s linear forwards;
+      -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+      clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+    }
+
+    h1::after {
+      animation: crack2 1s linear forwards;
+      -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+      clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+    }
+
+    @keyframes shake {
+
+      5%,
+      15%,
+      25%,
+      35%,
+      55%,
+      65%,
+      75%,
+      95% {
+        filter: blur(0.018em);
+        transform: translateY(0.018em) rotate(0deg);
+      }
+
+      10%,
+      30%,
+      40%,
+      50%,
+      70%,
+      80%,
+      90% {
+        filter: blur(0.01em);
+        transform: translateY(-0.018em) rotate(0deg);
+      }
+
+      20%,
+      60% {
+        filter: blur(0.03em);
+        transform: translate(-0.018em, 0.018em) rotate(0deg);
+      }
+
+      45%,
+      85% {
+        filter: blur(0.03em);
+        transform: translate(0.018em, -0.018em) rotate(0deg);
+      }
+
+      100% {
+        filter: blur(0.007em);
+        transform: translate(0) rotate(-0.5deg);
+      }
+    }
+
+    @keyframes crack1 {
+
+      0%,
+      95% {
+        transform: translate(-50%, -50%);
+      }
+
+      100% {
+        transform: translate(-51%, -48%);
+      }
+    }
+
+    @keyframes crack2 {
+
+      0%,
+      95% {
+        transform: translate(-50%, -50%);
+      }
+
+      100% {
+        transform: translate(-49%, -53%);
+      }
     }
   </style>
   <script type="module" crossorigin src="/assets/index.b90ae610.js"></script>
@@ -111,9 +269,11 @@ margin: 0;
 <body>
   <div class="main_404">
     <div class="card">
-      <p class="head">404</p>
-      <p class="oops">Oops, page not found 😢</p>
-      <a href="https://yulianluo.github.io/" ><p> Back to home</p></a>
+      <h1 data-text="4 0 4"><span>4 0 4</span></h1>
+      <p class="oops">Oops, page not found</p>
+      <a href="https://yulianluo.github.io/">
+        <p> Back to home</p>
+      </a>
 
     </div>
 
